@@ -11,86 +11,103 @@
 		<li><h4>NESTLE</h4></li>
 	
 		
-	<li><a href="#dashboard" id="item">Dashboard</a></li>
+	<li><a href="dashboard.php" id="item">Dashboard</a></li>
 	<li><a href="products.php">Products</a></li>
 	<li><a href="transfer.php">Transfer</a></li>
-	<li><a href="operations.php">Operations</a></li>
 	<li><a href="warehouse.php">Warehouse</a></li>
 	</ul>
 	
 	<br>
-	<!-- end of nav bar -->
-<!-- Trigger/Open The Modal -->
-<button id="myBtn">ADD PRODUCT</button>
-<!-- The Modal -->
-<div id="myModal" class="modal">
-<!-- Modal content -->
-<div class="modal-content">
-<span class="close">&times;</span>
-<h3>Enter the product detials here</h3>
-<form>
-<label>PRODUCT NAME:</label><br>
-<input type="text" name="pname"><br><br>
-<label>DESCRIPTION:</label><br>
-<input type="text" name="desc"><br><br>
-<label>QUANTITY:</label><br>
-<input type="number" name="pname"><br><br>
-<label>SELLING PRICE:</label><br>
-<input type="number" name="pname"><br><br>
-<input type="submit">
-</form>
-
-</div>
-
-</div>
-
-<script>
-// Get the modal
-var modal = document.getElementById('myModal');
-
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
-
 <?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "erpfinal";
 
-echo "<h1>Products in the inventory:</h1>";
+// Create connection
+$conn = new mysqli($servername, $username, $password,$dbname);
+
+echo "<h1>Tentative cost</h1>";
 echo "<table id=productsTable>
 	<tr>
 		<th>Product</th>
-		<th>Description</th>
-		<th>Quantity</th>
 		<th>Selling Price</th>
+		<th>Quantity</th>
+		<th>Total Cost</th>
 	</tr>
-</table>";
+	</table>";
 
+echo '<table id=productsTable>
+      <tr>
+      <td>Maggi(1 pack)</td>
+      <td>INR 10</td>
+      <td>
+      <form method="POST" action="products.php">
+	  <input type="number" name="qty" placeholder="Enter Quantity" min="1">
+	  <input type="submit"><input type="button" onclick="myFunction()" value="Reset form">
+      </form></td>';
+     @ $qty=$_POST["qty"];
+      $tcost=10*$qty;
+echo "<td>INR $tcost</td>";
 
+echo '<table id=productsTable>
+      <tr>
+      <td>Maggi(2 pack)</td>
+      <td>INR 20</td>
+      <td>
+      <form method="POST" action="products.php">
+	  <input type="number" name="qty1" placeholder="Enter Quantity" min="1">
+	  <input type="submit"><input type="button" onclick="myFunction()" value="Reset form">
+      </form></td>';
+      @$qty1=$_POST["qty1"];
+      $tcost1=20*$qty1;
+echo "<td>INR $tcost1 </td>";
 
+echo '<table id=productsTable>
+      <tr>
+      <td>Maggi(6 pack)</td>
+      <td>INR 60</td>
+      <td>
+      <form method="POST" action="products.php">
+	  <input type="number" name="qty2" placeholder="Enter Quantity" min="1">
+	  <input type="submit"><input type="button" onclick="myFunction()" value="Reset form">
+      </form></td>';
+      @$qty2=$_POST["qty2"];
+      $tcost2=60*$qty2;
+echo "<td>INR $tcost2 </td>";
 
+echo '<table id=productsTable>
+      <tr>
+      <td>Milky Bar</td>
+      <td>INR 20</td>
+      <td>
+      <form method="POST" action="products.php" id="myForm">
+	  <input type="number" name="qty3" placeholder="Enter Quantity" min="1">
+	  <input type="submit"><input type="button" onclick="myFunction()" value="Reset form">
+      </form></td>';
+     @ $qty3=$_POST["qty3"];
+      $tcost3=20*$qty3;
+echo "<td>INR $tcost3</td>";
 
+echo '<table id=productsTable>
+      <tr>
+      <td>Dairy Creamer</td>
+      <td>INR 40</td>
+      <td>
+      <form method="POST" action="products.php">
+	  <input type="number" name="qty4" placeholder="Enter Quantity" min="1">
+	  <input type="submit"><input type="button" onclick="myFunction()" value="Reset form">
+      </form></td>';
+     @ $qty4=$_POST["qty4"];
+      $tcost4=40*$qty4;
+echo "<td>INR $tcost4 </td>";
 
-
+     
 ?>
-
+<script>
+      function myFunction() {
+    document.getElementById("myForm").reset();
+}
+</script>
 </body>
 </html>

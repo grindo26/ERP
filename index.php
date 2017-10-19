@@ -18,11 +18,11 @@
 	Login to access your inventory.
 </h3>
 <form action="Login.php" method="POST">
-	<label>USER ID:-</label><br>
-	<input type="name" name="uid"><br>
-	<label>PASSWORD:-</label><br>
+	<label>USER ID:-</label><br><br>
+	<input type="name" name="uid"><br><br>
+	<label>PASSWORD:-</label><br><br>
 	<input type="password" name="password">
-	<br>
+	<br><br>
 	<input type="submit" >
 </form>
 <!-- form over -->

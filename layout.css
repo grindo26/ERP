@@ -2,12 +2,14 @@
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    table-layout: fixed;
 }
 
 #productsTable td, #productsTable th {
     border: 1px solid #ddd;
     padding: 8px;
-}
+    column-width: auto;
+    }
 
 #productsTable tr:nth-child(even){background-color: #f2f2f2;}
 
@@ -17,16 +19,12 @@
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #7AB9ED;
+    background-color: #76323F;
     color: white;
 }
 
 body{
-	background: url("bg.jpg");
-	height: 100%; 
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
+	background-color: #D7CEC7  ;
 }
 
 #item{
@@ -38,12 +36,12 @@ body{
 ul {
     list-style-type: none;
     display: block;
-    color: white;
+    color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     overflow: hidden;
-    background-color: #333;
+    background-color: white;
 }
 
 li {
@@ -51,20 +49,20 @@ li {
     }
     li a {
     display: block;
-    color: white;
+    color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
 li a:hover {
-    background-color: #111;
+    background-color: #C09F80;
 }
 
 /*form style*/
 div {
     	float: center;
-    background-color: lightgrey;
+    background-color: #565656;
     width: 300px;
     border: 25px #333;
     padding: 25px;
@@ -88,7 +86,7 @@ div {
 
 /* Modal Content */
 .modal-content {
-    background-color: #AED6F1  ;
+    background-color: #F2D7D5  ;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
@@ -108,31 +106,4 @@ div {
     color: #000;
     text-decoration: none;
     cursor: pointer;
-}
-
-
-/* Transfers Table */
-
-#transfer {
-
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-#transfer td, #transfer th {
-    border: 1px solid #ddd;
-    padding: 8px;
-}
-
-#transfer tr:nth-child(even){background-color: #f2f2f2;}
-
-#transfer tr:hover {background-color: #ddd;}
-
-#transfer th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #7AB9ED;
-    color: white;
 }
